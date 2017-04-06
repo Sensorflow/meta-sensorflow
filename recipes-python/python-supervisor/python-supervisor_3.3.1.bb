@@ -10,12 +10,10 @@ SRC_URI = "file://supervisord.conf file://supervisord.init"
 
 
 do_install_append() {
-            echo "TUVIEJA"
-            echo ${D}${sysconfdir}/supervisord.d
-	     install -d ${D}${sysconfdir}/supervisord.d
+	     install -d ${D}${sysconfdir}/supervisor/conf.d
 	     install -d ${D}${sysconfdir}/init.d
 	     
-	     install -m 0644 ${WORKDIR}/supervisord.conf ${D}${sysconfdir}
+	     install -m 0644 ${WORKDIR}/supervisor/supervisord.conf ${D}${sysconfdir}
 	     install -m 0755 ${WORKDIR}/supervisord.init ${D}${sysconfdir}/init.d/supervisord
 	     
 }
@@ -28,7 +26,7 @@ pkg_postrm_${PN}_append() {
     update-rc.d supervisord remove
 }
 
-FILES_${PN} += "${sysconfdir}/supervisord.conf"
+FILES_${PN} += "${sysconfdir}/supervisor/supervisord.conf"
 
 
 
@@ -40,6 +38,5 @@ PYPI_PACKAGE = "supervisor"
 
 RDEPENDS_${PN} = "python-modules python-distribute python-meld3"
 
-#RDEPENDS_${PN} = "${PYTHON_PN}-werkzeug ${PYTHON_PN}-jinja2 ${PYTHON_PN}-itsdangerous ${PYTHON_PN}-click"
 
  
