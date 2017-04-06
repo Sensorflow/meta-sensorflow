@@ -1,0 +1,18 @@
+inherit pypi setuptools
+
+SUMMARY = "Meld3"
+LICENSE = "MIT"
+LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
+SRC_URI[md5sum] = "3ccc78cd79cffd63a751ad7684c02c91"
+SRC_URI[sha256sum] = "f7b754a0fde7a4429b2ebe49409db240b5699385a572501bb0d5627d299f9558"
+
+
+
+
+CLEANBROKEN = "1"
+
+PYPI_PACKAGE = "meld3"
+
+
+
+ 
